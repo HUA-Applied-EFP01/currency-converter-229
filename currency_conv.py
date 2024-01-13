@@ -14,7 +14,7 @@ else:
         else:
                 amount=float(input('ΠΟΣΟ ΜΕΤΑΤΡΟΠΗΣ : '))
                 print ('Τι νόμισμα θέλετε να μετατρέψετε;')
-                print ('1.EUR\n2.USD\n3.JY\n4.RR\n5.CD')
+                print ('1=EUR\n2=USD\n3=JY\n4=RR\n5=1CD')
                 EUR=1 #1
                 USD=1.1 #2
                 JY=157.24 #3
