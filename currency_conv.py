@@ -1,59 +1,71 @@
 print('ΜΕΤΑΤΡΟΠΕΑΣ ΝΟΜΙΣΜΑΤΩΝ')
 print('ΠΑΤΗΣΤΕ:\n1 = ΕΝΑΡΞΗ ΜΕΤΑΤΡΟΠΗΣ\n2 = EXIT')
-select=int(input())
+select=input()
 
-while select<1 or select>2:
+while select!="1" and select!="2":
         print('ΔΩΣΑΤΕ ΛΑΘΟΣ ΕΠΙΛΟΓΗ')
-        select=int(input())
+        print('ΠΑΤΗΣΤΕ:\n1 = ΕΝΑΡΞΗ ΜΕΤΑΤΡΟΠΗΣ\n2 = ΕΞΟΔΟΣ')
+        select=input()
 else:
 
-        if select==2:
+        if select=="2":
                 print('ΕΥΧΑΡΙΣΤΟΥΜΕ!')
                 exit()
       
         else:
-                amount=float(input('ΠΟΣΟ ΜΕΤΑΤΡΟΠΗΣ : '))
                 print ('Τι νόμισμα θέλετε να μετατρέψετε;')
-                print ('1=EUR\n2=USD\n3=JY\n4=RR\n5=1CD')
+                print ('1=EUR\n2=USD\n3=JY\n4=RR\n5=CD')
                 EUR=1 #1
                 USD=1.1 #2
                 JY=157.24 #3
                 RR=101.18 #4
                 CD=1.46 #5
                 
-                nomisma=int(input('ΝΟΜΙΣΜΑ: '))
+                A=["1","2","3","4","5"]
+                nomisma=input('ΝΟΜΙΣΜΑ: ')
 
 
-                while nomisma<1 or nomisma>5:
+                while nomisma not in A:
                         print('Δώσατε λάθος επιλογή')
-                        nomisma=int(input('ΝΟΜΙΣΜΑ: '))
+                        nomisma=input('ΝΟΜΙΣΜΑ: ')
                 else:
-                        if nomisma==1:
+                        while True:
+                                try:
+                                        amount=float(input('ΠΟΣΟ ΜΕΤΑΤΡΟΠΗΣ : '))
+                                except ValueError:
+                                        print('Δώσατε λάθος επιλογή')
+                                else:
+                                        break
+                        if nomisma=="1":
                                 posomet=amount
-                        elif nomisma==2:
+                        elif nomisma=="2":
                                 posomet=amount/USD
-                        elif nomisma==3:
+                        elif nomisma=="3":
                                 posomet=amount/JY
-                        elif nomisma==4:
+                        elif nomisma=="4":
                                 posomet=amount/RR
-                        elif nomisma==5:
+                        elif nomisma=="5":
                                 posomet=amount/CD
 
-
-                nomismamet=int(input("ΜΕΤΑΤΡΟΠΗ ΣΕ: "))
-                while nomismamet<1 or nomismamet>5:
+                nomismamet=input("ΜΕΤΑΤΡΟΠΗ ΣΕ: ")
+                while nomismamet not in A:
                         print('Δώσατε λάθος επιλογή')
-                        nomismamet=int(input("ΜΕΤΑΤΡΟΠΗ ΣΕ: "))
+                        nomismamet=input("ΜΕΤΑΤΡΟΠΗ ΣΕ: ")
                 else:
-                        if nomismamet==1:
+                        if nomismamet=="1":
                                 teliko=posomet
-                        elif nomismamet==2:
+                                t="EUR"
+                        elif nomismamet=="2":
                                 teliko=posomet*USD
-                        elif nomismamet==3:
+                                t="USD"
+                        elif nomismamet=="3":
                                 teliko=posomet*JY
-                        elif nomismamet==4:
+                                t="JY"
+                        elif nomismamet=="4":
                                 teliko=posomet*RR
-                        elif nomismamet==5:
+                                t="RR"
+                        elif nomismamet=="5":
                                 teliko=posomet*CD
-                print('το τελικο ποσο ειναι: ', teliko)                
+                                t="CD"
+                print('το τελικο ποσο ειναι: ', teliko,t)                
 
