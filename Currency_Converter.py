@@ -53,5 +53,17 @@ def main():
         except ValueError:
            print ("Μη αποδεκτή τιμή! Παρακαλώ εισάγετε ένα έγκυρο νούμερο!")
 
-    exchange_rate = get_exchange_rate(base_currency, target_currency) 
+    exchange_rate = get_exchange_rate(base_currency, target_currency)
+    
+    converted_amount = convert_currency(amount, exchange_rate)
+    
+    print(f'Η σημερινή ισοτιμία για τα νομίσματα που επιλέξατε είναι: {exchange_rate} (στοιχεία από την Ευρωπαϊκή Κεντρική Τράπεζα).')
+    print('Οι ισοτιμίες ανανεώνονται καθημερινά στις 16:00 ώρα Ελλάδας.')
+    print(f'{amount} {base_currency} ισοδυναμούν με {converted_amount:.2f} {target_currency}.')
+    print ('Σας ευχαριστούμε πολύ! Team 229.') 
+    
+    sys.exit()
+       
+if __name__ == "__main__":
+    main() 
     
