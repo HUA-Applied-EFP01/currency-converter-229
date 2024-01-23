@@ -37,3 +37,21 @@ def main():
         sys.exit()
     else: 
         target_currency = input("Παρακαλώ εισάγετε τη συντομογραφία της τελικής νομισματικής μονάδας! (πχ: USD): ").upper()
+
+    while target_currency not in currency_dict:
+        target_currency = input("Μη αποδεκτή νομισματική μονάδα! Παρακαλώ προσπαθηστε πάλι!").upper() 
+    breakpoint
+    
+    if target_currency == 'ESC':
+        print ("Σας ευχαριστούμε πολύ!")   
+        sys.exit()
+    
+    while True:
+        try:
+            amount = float(input("Παρακαλώ εισάγετε το ποσό μετατροπής!: "))
+            break
+        except ValueError:
+           print ("Μη αποδεκτή τιμή! Παρακαλώ εισάγετε ένα έγκυρο νούμερο!")
+
+    exchange_rate = get_exchange_rate(base_currency, target_currency) 
+    
