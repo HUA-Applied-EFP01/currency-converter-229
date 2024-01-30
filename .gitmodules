@@ -1,0 +1,3 @@
+[submodule "forex-docks"]
+	path = forex-docks
+	url = https://github.com/tseloskon/forex-docs.git
